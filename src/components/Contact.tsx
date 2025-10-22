@@ -62,7 +62,7 @@ export default function Contact() {
     {
       icon: <Github className="w-6 h-6" />,
       label: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/Alain-Abraham-hub",
       color: "hover:text-violet-400"
     },
     {
@@ -74,7 +74,7 @@ export default function Contact() {
     {
       icon: <Mail className="w-6 h-6" />,
       label: "Email",
-      href: "mailto:alainabraham2006@gmail.com",
+      href: "https://mail.google.com/mail/?view=cm&to=alainabraham2006@gmail.com",
       color: "hover:text-violet-400"
     }
   ];
