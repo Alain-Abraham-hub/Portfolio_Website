@@ -50,13 +50,16 @@ export default function About() {
             className="glass-effect rounded-2xl p-8 md:p-12 mb-12"
           >
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
-              I'm a passionate technologist at the intersection of quantum computing, data engineering, and artificial intelligence.
-              My journey in technology is driven by curiosity and a desire to solve complex problems using cutting-edge solutions.
+              Hi, I’m Alain — a curious mind exploring the intersection of data engineering, artificial intelligence, and quantum computing.
+
+I’m passionate about building systems that merge classical logic with the emerging power of quantum information. From data pipelines to intelligent algorithms, my work focuses on transforming complexity into clarity through technology.
+
+I enjoy creating projects that bridge innovation and practicality — whether it’s designing data architectures, experimenting with quantum algorithms
             </p>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-              With expertise spanning from cloud infrastructure to quantum algorithms, I thrive on building systems that push
-              the boundaries of what's possible. Whether it's architecting data pipelines, implementing machine learning models,
-              or exploring quantum computational paradigms, I bring a holistic approach to every challenge.
+              When I’m not coding, you’ll find me learning about how quantum principles can inspire smarter, more secure digital systems — or just tinkering with futuristic design ideas.
+
+My goal is simple: to craft solutions that aren’t just efficient today, but ready for the next era of computation.
             </p>
           </motion.div>
 
