@@ -22,7 +22,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect border border-violet-500/30 mb-6"
           >
             <Sparkles className="w-4 h-4 text-cyan-400" />
-            <span className="text-sm text-gray-300">Welcome to the Quantum Frontier</span>
+            <span className="text-sm text-gray-300">Welcome to my portfolio</span>
           </motion.div>
 
           <motion.h1
@@ -31,7 +31,7 @@ export default function Hero() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-glow"
           >
-            S. J. Alain Abraham
+            Alain Abraham
           </motion.h1>
 
           <motion.h2
@@ -40,7 +40,7 @@ export default function Hero() {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-2xl md:text-3xl lg:text-4xl font-light mb-6 bg-gradient-to-r from-violet-400 via-cyan-400 to-violet-400 bg-clip-text text-transparent"
           >
-            Quantum Computing & Data Engineering Enthusiast
+            Quantum Computing & Artificial Intelligence enthusiast
           </motion.h2>
 
           <motion.p
@@ -49,7 +49,7 @@ export default function Hero() {
             transition={{ delay: 0.7, duration: 0.8 }}
             className="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto"
           >
-            Exploring the frontier of data, AI, and quantum logic
+            Exploring the frontier of data, AI, and quantum information
           </motion.p>
 
           <motion.div
