@@ -1,4 +1,5 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
+import { createClient } from "npm:@supabase/supabase-js@2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -36,12 +37,13 @@ Deno.serve(async (req: Request) => {
       );
     }
 
-    const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
+    const supabaseUrl = Deno.env.get("SUPABASE_URL");
+    const supabaseKey = Deno.env.get("SUPABASE_ANON_KEY");
 
-    if (!RESEND_API_KEY) {
-      console.error("RESEND_API_KEY not configured");
+    if (!supabaseUrl || !supabaseKey) {
+      console.error("Supabase credentials not configured");
       return new Response(
-        JSON.stringify({ error: "Email service not configured" }),
+        JSON.stringify({ error: "Service not configured" }),
         {
           status: 500,
           headers: {
@@ -52,34 +54,23 @@ Deno.serve(async (req: Request) => {
       );
     }
 
-    const emailData = {
-      from: "Portfolio Contact <onboarding@resend.dev>",
-      to: ["alainabraham2006@gmail.com"],
-      reply_to: email,
-      subject: `New Contact Form Submission from ${name}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-      `,
-    };
+    const supabase = createClient(supabaseUrl, supabaseKey);
 
-    const resendResponse = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${RESEND_API_KEY}`,
-      },
-      body: JSON.stringify(emailData),
-    });
+    const { data, error } = await supabase
+      .from("contact_messages")
+      .insert([
+        {
+          name,
+          email,
+          message,
+        },
+      ])
+      .select();
 
-    if (!resendResponse.ok) {
-      const errorData = await resendResponse.text();
-      console.error("Resend API error:", errorData);
+    if (error) {
+      console.error("Database error:", error);
       return new Response(
-        JSON.stringify({ error: "Failed to send email" }),
+        JSON.stringify({ error: "Failed to save message" }),
         {
           status: 500,
           headers: {
@@ -89,11 +80,9 @@ Deno.serve(async (req: Request) => {
         }
       );
     }
-
-    const result = await resendResponse.json();
 
     return new Response(
-      JSON.stringify({ success: true, data: result }),
+      JSON.stringify({ success: true, data }),
       {
         status: 200,
         headers: {
