@@ -102,7 +102,7 @@ export default function Projects() {
                 </div>
 
                 <button className="mt-6 w-full py-2 px-4 rounded-lg bg-gradient-to-r from-violet-600/50 to-cyan-600/50 text-white font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 hover:from-violet-600 hover:to-cyan-600">
-                  View on GitHub
+                 
                 </button>
               </motion.div>
             ))}
