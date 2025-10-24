@@ -26,22 +26,22 @@ export default function Contact() {
     setSubmitStatus(null);
 
     try {
-      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-contact-email`;
+      const { error } = await supabase
+        .from('contact_messages')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+          }
+        ]);
 
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
+      if (error) {
+        console.error('Error submitting form:', error);
+        setSubmitStatus('error');
+      } else {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', message: '' });
-      } else {
-        setSubmitStatus('error');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
