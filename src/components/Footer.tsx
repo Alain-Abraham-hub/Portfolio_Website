@@ -6,9 +6,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-400 text-sm">
-            Built with{' '}
-            <Heart className="inline w-4 h-4 text-red-500 fill-red-500" />{' '}
-            using React, TypeScript, and Tailwind CSS
+            Hope you found this website usefull :)
           </p>
           <p className="text-gray-400 text-sm">
             &copy; {new Date().getFullYear()} S. J. Alain Abraham. All rights reserved.
