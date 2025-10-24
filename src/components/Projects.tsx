@@ -12,7 +12,7 @@ export default function Projects() {
       title: "Quantum Algorithm Simulator",
       description: "A Python-based simulator for quantum circuits and algorithms, featuring Grover's and Shor's algorithms with visualization capabilities.",
       tags: ["Python", "Qiskit", "Quantum Computing"],
-      github: "#"
+      github: "https://github.com/Kukyos/GroundStateFinder.git"
     },
     {
       title: "Distributed Data Pipeline",
