@@ -9,40 +9,28 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "Quantum Algorithm Simulator",
-      description: "A Python-based simulator for quantum circuits and algorithms, featuring Grover's and Shor's algorithms with visualization capabilities.",
-      tags: ["Python", "Qiskit", "Quantum Computing"],
+      title: "Molecule Ground State Finder",
+      description: "Using the Qiskit module in python to create a enhanced VQE algorithm to find the Ground state of molecule",
+      tags: ["Python", "Qiskit", "Quantum Computing","GroundStateFinder"],
       github: "https://github.com/Kukyos/GroundStateFinder.git"
     },
     {
-      title: "Distributed Data Pipeline",
-      description: "Scalable ETL pipeline built with Apache Spark and Airflow, processing terabytes of data across AWS infrastructure.",
-      tags: ["Python", "Apache Spark", "AWS", "Airflow"],
-      github: "#"
+      title: "QKernels4Molecules",
+      description: "Exploring quantum-inspired feature maps and graph kernels for molecular machine learning.",
+      tags: ["Python","Qiskit", "Dwave", "QML"],
+      github: "https://github.com/Alain-Abraham-hub/QKernels4Molecules.git"
     },
     {
-      title: "Real-time Analytics Dashboard",
-      description: "Interactive dashboard built with Streamlit for real-time data visualization and predictive analytics using ML models.",
-      tags: ["Streamlit", "Python", "ML", "Data Viz"],
-      github: "#"
+      title: "Air-pollution-forecast",
+      description: "Short term forecast of gaseous air pollutants (ground-level O3 and NO2) using satellite and reanalysis data",
+      tags: ["Jupyter notebook", "Python", "Numpy", "Scipy", "HybridMLmodels"],
+      github: "https://github.com/Alain-Abraham-hub/Air-pollution-forecast.git"
     },
     {
-      title: "Neural Network Framework",
-      description: "Lightweight deep learning framework implementing backpropagation and various optimization algorithms from scratch.",
-      tags: ["Python", "NumPy", "Deep Learning"],
-      github: "#"
-    },
-    {
-      title: "Cloud-Native Microservices",
-      description: "Containerized microservices architecture deployed on Kubernetes with CI/CD pipelines and monitoring.",
-      tags: ["Docker", "Kubernetes", "Python", "FastAPI"],
-      github: "#"
-    },
-    {
-      title: "Quantum-Classical Hybrid Solver",
-      description: "Hybrid optimization solver combining quantum annealing with classical algorithms for complex combinatorial problems.",
-      tags: ["Python", "D-Wave", "Optimization"],
-      github: "#"
+      title: "AgriRiskShield",
+      description: "A AIML prediction programme to protect oilseed farmers from fluctuating markets by predicting market patterns and simulating sales to teach and securing buy and sell using blockchain",
+      tags: ["Python", "Pytorch", "Machine learning", "Blockchain"],
+      github: "https://github.com/Alain-Abraham-hub/AgriRiskShield.git"
     }
   ];
 
